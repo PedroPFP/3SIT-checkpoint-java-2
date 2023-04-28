@@ -40,7 +40,7 @@ public class GenericController<E,S extends IGenericService<E>,D,B extends IGener
 	
 	@PostMapping
 	ResponseEntity<E> save(@RequestBody D data) {
-		E prd = builder.toEntity(data);		
+		E prd = builder.toEntity(data);
 		E prod = service.save(prd);
 		
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body(prod);
