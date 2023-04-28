@@ -19,8 +19,8 @@ public class ProdutoService {
 		return repository.findAll();
 	}
 	
-	public void save(ProdutoDto data) {
+	public Produto save(ProdutoDto data) {
 		Produto prd = new Produto(data.codigo_produto(),data.nome(), data.preco(), data.data_validade(), data.data_garantia(), data.em_estoque());
-		repository.save(prd);
+		return repository.save(prd);
 	}
 }
