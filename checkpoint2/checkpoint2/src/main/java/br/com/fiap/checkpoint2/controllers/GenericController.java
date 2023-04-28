@@ -48,7 +48,10 @@ public class GenericController<E,S extends IGenericService<E>,D,B extends IGener
 	
 	@PutMapping
 	ResponseEntity<E> update(@RequestBody D data){
-		return null;
+		E prd = builder.toEntity(data);		
+		E prod = service.save(prd);
+		
+		return ResponseEntity.status(HttpStatus.ACCEPTED).body(prod);
 	}
 	
 	@DeleteMapping
