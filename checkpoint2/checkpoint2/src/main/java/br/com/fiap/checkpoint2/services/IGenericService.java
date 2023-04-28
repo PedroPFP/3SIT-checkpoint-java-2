@@ -7,5 +7,5 @@ public interface IGenericService<T> {
 	List<T> findAll();
 	Optional<T> findById(int id);
 	T save(T entity);
-	void delete(T entity);
+	void delete(int id);
 }

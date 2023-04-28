@@ -16,4 +16,10 @@ public class PedidoRepositoy extends GenericController<Pedido, PedidoService, Pe
 		super(service, new PedidoBuilder());
 	}
 
+	@Override
+	public int getIdFromEntity(Pedido entity) {
+		// TODO Auto-generated method stub
+		return entity.getId();
+	}
+	
 }

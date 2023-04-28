@@ -16,5 +16,11 @@ public class ProdutoController extends GenericController<Produto, ProdutoService
 		super(service, new ProdutoBuilder());
 		// TODO Auto-generated constructor stub
 	}
+	
+	@Override
+	public int getIdFromEntity(Produto entity) {
+		// TODO Auto-generated method stub
+		return entity.getId();	
+		}
 
 }

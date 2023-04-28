@@ -25,8 +25,8 @@ public class GenericService<T> implements IGenericService<T>{
 		return repository.save(entity);
 	}
 	
-	public void delete(T entity) {
-		repository.delete(entity);
+	public void delete(int id) {
+		repository.deleteById(id);
 	}		
 
 	@Override

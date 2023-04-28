@@ -17,5 +17,11 @@ public class ClienteController extends GenericController<Cliente, ClienteService
 		// TODO Auto-generated constructor stub
 	}
 	
+	@Override
+	public int getIdFromEntity(Cliente entity) {
+		// TODO Auto-generated method stub
+		return entity.getId();
+	}
+	
 		
 }
