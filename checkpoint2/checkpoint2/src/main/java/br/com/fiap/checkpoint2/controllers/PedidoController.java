@@ -10,9 +10,9 @@ import br.com.fiap.checkpoint2.services.PedidoService;
 
 @RequestMapping("pedidos")
 @RestController
-public class PedidoRepositoy extends GenericController<Pedido, PedidoService, PedidoDto, PedidoBuilder>{
+public class PedidoController extends GenericController<Pedido, PedidoService, PedidoDto, PedidoBuilder>{
 
-	public PedidoRepositoy(PedidoService service) {
+	public PedidoController(PedidoService service) {
 		super(service, new PedidoBuilder());
 	}
 

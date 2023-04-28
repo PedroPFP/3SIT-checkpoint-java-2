@@ -1,12 +1,14 @@
 package br.com.fiap.checkpoint2.models;
 
 import java.sql.Date;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -79,6 +81,8 @@ public class Produto {
 	private Date dataGarant;
 	@Column(name = "em_estoque")
 	private boolean emEstoque;
+	@OneToMany(mappedBy = "produto")
+	private List<ItemPedido> itensPedidos;
 	
 	public Produto() {
 		
