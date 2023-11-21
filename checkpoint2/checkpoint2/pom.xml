@@ -12,16 +12,17 @@
 	<artifactId>checkpoint2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>checkpoint2</name>
+	<packaging>war</packaging>
 	<description>checkpoint2</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>11</java.version>
 	</properties>
 	
 	<profiles>
     <profile>
-        <id>prod</id>
+        <id>prd</id>
         <properties>
-            <spring.profiles.active>prod</spring.profiles.active>
+            <spring.profiles.active>prd</spring.profiles.active>
         </properties>
     </profile>
 </profiles>
