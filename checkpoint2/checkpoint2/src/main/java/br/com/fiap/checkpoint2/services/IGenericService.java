@@ -5,7 +5,7 @@ import java.util.Optional;
 
 public interface IGenericService<T> {
 	List<T> findAll();
-	Optional<T> findById(int id);
+	Optional<T> findById(long id);
 	T save(T entity);
-	void delete(int id);
+	void delete(Long id);
 }

@@ -10,16 +10,16 @@ public class ItemPedidoBuilder implements IGenericBuilder<ItemPedido, ItemPedido
 	@Override
 	public ItemPedido toEntity(ItemPedidoDto dto) {
 		Pedido pedido = new Pedido();
-		pedido.setId(dto.numero_pedido());
+		pedido.setId(dto.pedido().getId());
 		Produto produto = new Produto();
-		produto.setId(dto.codigo_produto());
-		ItemPedido item = new ItemPedido(dto.sequencia(),pedido, produto, dto.quantidade(), dto.valor_total());
+		produto.setId(dto.produto().getId());
+		ItemPedido item = new ItemPedido(dto.id(),pedido, produto, dto.quantidade(), dto.valorUnitario(), dto.valorTotal());
 		return item;
 	}
 
 	@Override
 	public ItemPedidoDto toDto(ItemPedido entity) {
-		ItemPedidoDto item = new ItemPedidoDto(entity.getSequencia(), entity.getPedido().getId(), entity.getProduto().getId(), entity.getQuantidade(), entity.getValor());
+		ItemPedidoDto item = new ItemPedidoDto(entity.getId(), entity.getPedido(), entity.getProduto(), entity.getQuantidade(), entity.getValorUnitario(), entity.getValorTotal());
 		return item;
 	}
 

@@ -34,10 +34,12 @@ public class GenericController<E,S extends IGenericService<E>,D,B extends IGener
 	}
 	
 	
+	
+	
 	@GetMapping
 	ResponseEntity<List<D>> list(){
 		List<D> all = (List<D>) service.findAll().stream().map(e -> builder.toDto(e)).collect(Collectors.toList());
-		return ResponseEntity.ok(all);
+		return new ResponseEntity<>(all, HttpStatus.OK);
 	}
 	
 	@PostMapping
@@ -51,7 +53,7 @@ public class GenericController<E,S extends IGenericService<E>,D,B extends IGener
 	@PutMapping
 	ResponseEntity<D> update(@RequestBody D data){		
 		E prd = builder.toEntity(data);
-		int id = getIdFromEntity(prd);
+		long id = getIdFromEntity(prd);
 		Optional<E> element =  service.findById(id);
 		if(element.isEmpty()) {						
 			throw new RuntimeException("Id não encontrado " 
@@ -64,11 +66,11 @@ public class GenericController<E,S extends IGenericService<E>,D,B extends IGener
 	}
 	
 	@DeleteMapping(value="{id}")
-	void delete(@PathVariable int id) {
+	void delete(@PathVariable Long id) {
 		service.delete(id);
 	}
 	
-	public int getIdFromEntity(E entity) {
-		return 0;
+	public Long getIdFromEntity(E entity) {
+		return (long) 0;
 	}
 }

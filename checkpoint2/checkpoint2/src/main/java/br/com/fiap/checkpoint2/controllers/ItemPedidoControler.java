@@ -17,10 +17,9 @@ public class ItemPedidoControler extends GenericController<ItemPedido, ItemPedid
 		// TODO Auto-generated constructor stub
 	}
 	
-	@Override
-	public int getIdFromEntity(ItemPedido entity) {
+	public Long getIdFromEntity(ItemPedido entity) {
 		// TODO Auto-generated method stub
-		return entity.getSequencia();
+		return entity.getId();
 	}
 
 }

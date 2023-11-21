@@ -18,7 +18,7 @@ public class ProdutoController extends GenericController<Produto, ProdutoService
 	}
 	
 	@Override
-	public int getIdFromEntity(Produto entity) {
+	public Long getIdFromEntity(Produto entity) {
 		// TODO Auto-generated method stub
 		return entity.getId();	
 		}

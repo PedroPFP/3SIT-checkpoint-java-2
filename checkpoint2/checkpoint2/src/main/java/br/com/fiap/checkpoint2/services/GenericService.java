@@ -25,14 +25,15 @@ public class GenericService<T> implements IGenericService<T>{
 		return repository.save(entity);
 	}
 	
-	public void delete(int id) {
+	public void delete(Long id) {
 		repository.deleteById(id);
 	}		
 
 	@Override
-	public Optional<T> findById(int id) {		
+	public Optional<T> findById(long id) {		
 		return repository.findById(id);
 	}
+
 	
 	
 	

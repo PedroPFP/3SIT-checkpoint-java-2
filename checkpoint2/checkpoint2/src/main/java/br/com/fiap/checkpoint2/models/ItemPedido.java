@@ -1,5 +1,8 @@
 package br.com.fiap.checkpoint2.models;
 
+import java.math.BigDecimal;
+import java.time.Instant;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,40 +11,37 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "itens_pedidos")
 public class ItemPedido {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
-	private int sequencia;
-	@ManyToOne
-	@JoinColumn(name ="numero_pedido")
+	private Long id;
+	
+	@ManyToOne(optional = false)
 	private Pedido pedido;
-	@ManyToOne
-	@JoinColumn(name ="codigo_produto")
-	private Produto produto; 
-	@Column	
-	private int quantidade;
-	@Column(name = "valor_total")
-	private double valor;
-	public ItemPedido(int sequencia, Pedido pedido, Produto produto, int quantidade, double valor) {
-		super();
-		this.sequencia = sequencia;
-		this.pedido = pedido;
-		this.produto = produto;
-		this.quantidade = quantidade;
-		this.valor = valor;
-	}
-	public ItemPedido() {
-		super();
-	}
+	
+	@ManyToOne(optional = false)
+	private Produto produto;
+	
+	@Column(nullable = false)
+	private BigDecimal quantidade;
+	
+	@Column(nullable = false)
+	private BigDecimal valorUnitario;
+		
+	@Column(nullable = false)
+	private BigDecimal valorTotal;
 	
 	
 }

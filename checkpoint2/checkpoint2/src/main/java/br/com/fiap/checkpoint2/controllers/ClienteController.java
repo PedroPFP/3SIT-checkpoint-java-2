@@ -18,7 +18,7 @@ public class ClienteController extends GenericController<Cliente, ClienteService
 	}
 	
 	@Override
-	public int getIdFromEntity(Cliente entity) {
+	public Long getIdFromEntity(Cliente entity) {
 		// TODO Auto-generated method stub
 		return entity.getId();
 	}

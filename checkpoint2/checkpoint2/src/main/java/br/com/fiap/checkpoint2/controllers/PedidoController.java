@@ -17,7 +17,7 @@ public class PedidoController extends GenericController<Pedido, PedidoService, P
 	}
 
 	@Override
-	public int getIdFromEntity(Pedido entity) {
+	public Long getIdFromEntity(Pedido entity) {
 		// TODO Auto-generated method stub
 		return entity.getId();
 	}

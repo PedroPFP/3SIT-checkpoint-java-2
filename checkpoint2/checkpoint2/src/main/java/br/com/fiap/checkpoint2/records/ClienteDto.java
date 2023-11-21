@@ -1,5 +1,17 @@
 package br.com.fiap.checkpoint2.records;
 
-public record ClienteDto(int codigo_cliente, String nome, String inscricao_federal, String cep) {
+import java.time.Instant;
+
+public record ClienteDto(Long id,
+ String nome,
+ String cep,
+ String logradouro,
+ String numero,
+ String complemento,
+ String bairro,
+ String municipio,
+ String uf,
+ Instant dataCadastro,
+ boolean ativo) {
 	
 }
